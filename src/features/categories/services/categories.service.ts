@@ -22,7 +22,7 @@ export const categoriesService = {
         };
     },
 
-    async create(data: CreateCategoryRequestDto) : Promise<ApiResponse<Object>> {
+    async create(data: CreateCategoryRequestDto) : Promise<ApiResponse<object>> {
         const response = await categoriesApi.create(data);
         return {
             message: response.message,
@@ -30,7 +30,7 @@ export const categoriesService = {
         };
     },
 
-    async update(id: number, data: UpdateCategoryRequestDto) : Promise<ApiResponse<Object>> {
+    async update(id: number, data: UpdateCategoryRequestDto) : Promise<ApiResponse<object>> {
         const response = await categoriesApi.update(id, data);
         return {
             message: response.message,
@@ -38,7 +38,7 @@ export const categoriesService = {
         };
     },
 
-    async updateStatus(id: number, data: ChangeCategoryStatusRequestDto) : Promise<ApiResponse<Object>> {
+    async updateStatus(id: number, data: ChangeCategoryStatusRequestDto) : Promise<ApiResponse<object>> {
         const response = await categoriesApi.updateStatus(id, data);
         return {
             message: response.message,
