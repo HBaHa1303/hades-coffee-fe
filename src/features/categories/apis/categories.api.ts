@@ -16,22 +16,22 @@ export const categoriesApi = {
     },
 
     create: async(data: CreateCategoryRequestDto) => {
-        const response = await axiosInstance.post<ApiResponse<Object>>(BASE_URL, {data});
+        const response = await axiosInstance.post<ApiResponse<object>>(BASE_URL, {data});
         return response.data;
     },
 
     update: async(id: number, data: UpdateCategoryRequestDto) => {
-        const response = await axiosInstance.put<ApiResponse<Object>>(`${BASE_URL}/${id}`, {data});
+        const response = await axiosInstance.put<ApiResponse<object>>(`${BASE_URL}/${id}`, {data});
         return response.data;
     },
 
     updateStatus: async(id: number, data: ChangeCategoryStatusRequestDto)=> {
-        const response = await axiosInstance.patch<ApiResponse<Object>>(`${BASE_URL}/${id}`, {data});
+        const response = await axiosInstance.patch<ApiResponse<object>>(`${BASE_URL}/${id}`, {data});
         return response.data;
     },
 
     delete: async(id: number) => {
-        const response = await axiosInstance.delete<ApiResponse<Object>>(`${BASE_URL}/${id}`);
+        const response = await axiosInstance.delete<ApiResponse<object>>(`${BASE_URL}/${id}`);
         return response.data;
     }
 }
