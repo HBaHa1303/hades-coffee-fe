@@ -14,8 +14,8 @@ export interface ChangeCategoryStatusRequestDto {
     status: CategoryStatus;
 }
 
-export class GetCatetoriesRequestDto extends Filter {
-    status: CategoryStatus
+export class GetCategoriesRequestDto extends Filter {
+    status?: CategoryStatus
     
     constructor(page: number, size: number, sortBy: string, asc: boolean, keyword: string, status: CategoryStatus) {
         super(page, size, sortBy, asc, keyword);

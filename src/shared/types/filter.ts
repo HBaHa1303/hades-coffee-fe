@@ -1,8 +1,8 @@
 export class Filter {
     page: number;
     size: number;
-    sortBy: string;
-    asc: boolean;
+    sortBy?: string;
+    asc?: boolean;
     keyword?: string;
 
     constructor(page: number, size: number, sortBy: string, asc: boolean, keyword: string) {

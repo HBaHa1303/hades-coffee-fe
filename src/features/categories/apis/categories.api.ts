@@ -1,11 +1,11 @@
-import { axiosInstance } from "@/libs/axios-instance";
-import { CategoryResponseDto, ChangeCategoryStatusRequestDto, CreateCategoryRequestDto, GetCatetoriesRequestDto, UpdateCategoryRequestDto } from "./categories.dto";
+import { axiosInstance } from "@/libs/axios/axios-instance";
+import { CategoryResponseDto, ChangeCategoryStatusRequestDto, CreateCategoryRequestDto, GetCategoriesRequestDto, UpdateCategoryRequestDto } from "./categories.dto";
 import { ApiResponse } from "@/shared/types/response";
 
 const BASE_URL = '/private/api/v1/categories';
 
 export const categoriesApi = {
-    getList: async(params: GetCatetoriesRequestDto) => {
+    getList: async(params: GetCategoriesRequestDto) => {
         const response = await axiosInstance.get<ApiResponse<CategoryResponseDto[]>>(BASE_URL, {params});
         return response.data;
     },

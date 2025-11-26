@@ -1,11 +1,11 @@
 import { ApiResponse } from "@/shared/types/response";
-import { ChangeCategoryStatusRequestDto, CreateCategoryRequestDto, GetCatetoriesRequestDto, UpdateCategoryRequestDto } from "../apis/categories.dto";
+import { ChangeCategoryStatusRequestDto, CreateCategoryRequestDto, GetCategoriesRequestDto , UpdateCategoryRequestDto } from "../apis/categories.dto";
 import { Category } from "../models/categories.model";
 import { categoriesApi } from "../apis/categories.api";
 import { CategoryMapper } from "../apis/categories.mapper";
 
 export const categoriesService = {
-    async getList(params: GetCatetoriesRequestDto): Promise<ApiResponse<Category[]>> {
+    async getList(params: GetCategoriesRequestDto): Promise<ApiResponse<Category[]>> {
         const response = await categoriesApi.getList(params);
         return {
             message: response.message,
@@ -40,6 +40,14 @@ export const categoriesService = {
 
     async updateStatus(id: number, data: ChangeCategoryStatusRequestDto) : Promise<ApiResponse<Object>> {
         const response = await categoriesApi.updateStatus(id, data);
+        return {
+            message: response.message,
+            data: response.data
+        }
+    },
+
+    async delete(id: number) : Promise<ApiResponse<Object>> {
+        const response = await categoriesApi.delete(id);
         return {
             message: response.message,
             data: response.data
