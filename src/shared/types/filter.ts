@@ -1,6 +1,6 @@
 export class Filter {
-    page: number;
-    size: number;
+    page?: number;
+    size?: number;
     sortBy?: string;
     asc?: boolean;
     keyword?: string;
