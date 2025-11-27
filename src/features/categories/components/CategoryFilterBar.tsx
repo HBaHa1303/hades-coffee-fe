@@ -3,7 +3,7 @@ import { CategoryStatus } from "@/shared/types/status";
 import { Box, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 interface CategoryFilterBarProps {
-    keyword?: string,
+    keyword: string,
     status?: CategoryStatus,
     onKeywordChange: (keyword: string) => void,
     onStatusChange: (status: CategoryStatus | undefined) => void

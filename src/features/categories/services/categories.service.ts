@@ -23,6 +23,7 @@ export const categoriesService = {
     },
 
     async create(data: CreateCategoryRequestDto) : Promise<ApiResponse<object>> {
+        console.log(data)
         const response = await categoriesApi.create(data);
         return {
             message: response.message,
@@ -46,7 +47,7 @@ export const categoriesService = {
         }
     },
 
-    async delete(id: number) : Promise<ApiResponse<Object>> {
+    async delete(id: number) : Promise<ApiResponse<object>> {
         const response = await categoriesApi.delete(id);
         return {
             message: response.message,

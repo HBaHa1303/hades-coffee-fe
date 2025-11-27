@@ -5,3 +5,14 @@ export interface Category {
     name: string;
     status: CategoryStatus;
 }
+
+export interface PagingInfo {
+  page: number;
+  size: number;
+  totalElements: number;
+  totalPages: number;
+  hasNext: boolean;
+  hasPrevious: boolean;
+  first: boolean;
+  last: boolean;
+}

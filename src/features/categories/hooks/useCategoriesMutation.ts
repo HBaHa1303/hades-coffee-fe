@@ -29,8 +29,8 @@ export function useChangeStatusCategory() {
 
     return useMutation({
         mutationFn: ({id, data}: {id: number, data: ChangeCategoryStatusRequestDto}) => categoriesService.updateStatus(id, data),
-        onSuccess: (_, variables) => {
-            queryClient.invalidateQueries({queryKey: CATEGORY_QUERY_KEYS.detail(variables.id)})
+        onSuccess: () => {
+            queryClient.invalidateQueries({queryKey: CATEGORY_QUERY_KEYS.lists()})
         }
     });
 }

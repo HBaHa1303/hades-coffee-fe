@@ -1,10 +1,14 @@
-import { Filter } from "@/shared/types/filter";
 import { CategoryStatus } from "@/shared/types/status";
 import { useCallback, useState } from "react";
 import { GetCategoriesRequestDto } from "../apis/categories.dto";
 
-export interface CategoryTableState extends Filter {
-    status?: CategoryStatus
+export interface CategoryTableState {
+    status?: CategoryStatus;
+    page: number;
+    size: number;
+    sortBy?: string;
+    asc?: boolean;
+    keyword: string;
 }
 
 export function useCategoriesTable() {
@@ -13,8 +17,8 @@ export function useCategoriesTable() {
         page: 0,
         size: 10, 
         status: undefined,
-        sortBy: 'createdAt',
-        asc: false
+        sortBy: undefined,
+        asc: undefined
     });
 
     const setKeyword = useCallback((keyword: string) => {
