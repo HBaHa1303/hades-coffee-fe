@@ -4,6 +4,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/libs/mui/theme";
 import { QueryProvider } from "@/libs/react-query/QueryProvider";
+import MuiXProvider from "@/libs/date-picker/MuiXProvider";
 
 export const metadata: Metadata = {
   title: "Hades Coffee",
@@ -21,7 +22,9 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <QueryProvider>
-              {children}
+              <MuiXProvider>
+                {children}
+              </MuiXProvider>
             </QueryProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>

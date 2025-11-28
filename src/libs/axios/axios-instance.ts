@@ -34,7 +34,7 @@ axiosPrivate.interceptors.response.use(
     }
 
     if (res.status === 401) {
-        window.location.href = "/login"; 
+        window.location.href = "/sign-in"; 
         return Promise.reject({ message: "Chưa đăng nhập" });
     }
 
