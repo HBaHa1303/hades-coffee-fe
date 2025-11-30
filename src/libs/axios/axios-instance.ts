@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useAuthStore } from "../stores/authStore";
 
 export const axiosPublic = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -17,7 +18,7 @@ export const axiosPrivate = axios.create({
 
 axiosPrivate.interceptors.request.use(
     (config) => {
-        const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiZXhwIjoxNzY0MzI1MDM0fQ.RdglxMiGum8N3x7WbDnjFq6aRdLhqEJZIHQ66M_N6aMa";
+        const token = useAuthStore.getState().token;
         config.headers.Authorization = `Bearer ${token}`;
 
         return config;
